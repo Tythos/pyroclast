@@ -1,0 +1,23 @@
+{"": [{
+	"name": "zero",
+	"description": "The zeroth entry",
+	"value": 0.0
+}, {
+	"name": "one",
+	"description": "The first entry",
+	"value": 1.0
+}, {
+	"name": "two",
+	"description": "The second entry",
+	"value": 2.0,
+	"isPrime": true
+}, {
+	"name": "three",
+	"description": "The third entry",
+	"value": 3.0,
+	"isPrime": true
+}, {
+	"name": "four",
+	"description": "The fourth entry",
+	"value": 4.0
+}]}

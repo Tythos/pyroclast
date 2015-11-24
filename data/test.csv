@@ -1,0 +1,6 @@
+id,name,title,description,value,isPrime
+0,zero,Zero,The zeroth entry,0.,False
+1,one,One,The first entry,1.,False
+2,two,Two,The second entry,2.,True
+3,three,Three,The third entry,3.,True
+4,four,Four,The fourth entry,4.,False
