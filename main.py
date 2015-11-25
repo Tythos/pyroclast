@@ -12,11 +12,18 @@ def null(file, filters):
 	return ''
 	
 mimeTypes = {
-	'.csv': 'text/csv'
+	'.csv': 'text/plain',
+	'.xls': 'text/plain',
+	'.xlsx': 'text/plain',
+	'.sql': 'text/plain',
+	'.json': 'text/plain'
 }
 
 parsers = {
 	'.csv': dataTables.getCsv,
+	'.xls': dataTables.getExcel,
+	'.xlsx': dataTables.getExcel,
+	'.sql': dataTables.getSqlite,
 	'.json': objectHierarchies.getJson,
 	'.ico': null
 }
