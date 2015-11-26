@@ -16,7 +16,8 @@ mimeTypes = {
 	'.xls': 'text/plain',
 	'.xlsx': 'text/plain',
 	'.sql': 'text/plain',
-	'.json': 'text/plain'
+	'.json': 'text/plain',
+	'.xml': 'text/plain'
 }
 
 parsers = {
@@ -25,6 +26,7 @@ parsers = {
 	'.xlsx': dataTables.getExcel,
 	'.sql': dataTables.getSqlite,
 	'.json': objectHierarchies.getJson,
+	'.xml': objectHierarchies.getXml,
 	'.ico': null
 }
 

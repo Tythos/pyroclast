@@ -13,5 +13,14 @@ class JsonTests(unittest.TestCase):
 		file = data.get_path('test.json')
 		content = objectHierarchies.getJson(file, {'isPrime': True})
 
+class XmlTests(unittest.TestCase):
+	def test_get(self):
+		file = data.get_path('test.xml')
+		content = objectHierarchies.getXml(file)
+		
+	def test_filter(self):
+		file = data.get_path('test.xml')
+		content = objectHierarchies.getXml(file, {'isPrime': True})
+
 if __name__ == "__main__":
 	unittest.main()

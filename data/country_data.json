@@ -1,0 +1,69 @@
+{[{
+	"_tag": "country",
+	"name": "Liechtenstein",
+	"rank": 1,
+	"year": 2008,
+	"gdppb": 14110,
+	"_children": [{
+		"_tag": "rank",
+		"_text": 1
+	}, {
+		"_tag": "year",
+		"_text": 2008
+	}, {
+		"_tag": "gdppc",
+		"_text": 141100
+	}, {
+		"_tag": "neighbor",
+		"name": "Austria",
+		"direction": "Z"
+	}, {
+		"_tag": "neighbor",
+		"name": "Switzerland",
+		"direction": "W"
+	}]
+}, {
+	"_tag": "country",
+	"name": "Singapore",
+	"rank": 4,
+	"year": 2011,
+	"gdppb": 59900,
+	"_children": [{
+		"_tag": "rank",
+		"_text": 4
+	}, {
+		"_tag": "year",
+		"_text": 2011
+	}, {
+		"_tag": "gdppc",
+		"_text": 59900
+	}, {
+		"_tag": "neighbor",
+		"name": "Malysia",
+		"direction": "N"
+	}]
+}, {
+	"_tag": "country",
+	"_name": "Panama",
+	"rank": 68,
+	"year": 2011,
+	"gdppb": 13600,
+	"_children": [{
+		"_tag": "rank",
+		"_text": 68
+	}, {
+		"_tag": "year",
+		"_text": 2011
+	}, {
+		"_tag": "gdppc",
+		"_text": 13600
+	}, {
+		"_tag": "neighbor",
+		"name": "Costa Rica",
+		"direction": "W"
+	}, {
+		"_tag": "neighbor",
+		"name": "Columbia",
+		"direction": "E"
+	}]
+}]}

@@ -1,0 +1,24 @@
+<root>
+	<entry name="zero">
+		<description>The zeroth entry</description>
+		<value>0.0</value>
+	</entry>
+	<entry name="one">
+		<description>The first entry</description>
+		<value>1.0</value>
+	</entry>
+	<entry name="two">
+		<description>The second entry</description>
+		<value>2.0</value>
+		<isPrime>True</isPrime>
+	</entry>
+	<entry name="three">
+		<description>The third entry</description>
+		<value>3.0</value>
+		<isPrime>True</isPrime>
+	</entry>
+	<entry name="four">
+		<description>The forth entry</description>
+		<value>4.0</value>
+	</entry>
+</root>
