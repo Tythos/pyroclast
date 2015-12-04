@@ -1,4 +1,5 @@
-"""Handlers for data formats structured around a flat data table, as opposed to an object hierarchy, such as CSV and Excel
+"""Handlers for data formats structured around a flat data table, as opposed to
+   an object hierarchy, such as CSV and Excel
 """
 
 import csv
@@ -15,6 +16,10 @@ else:
 	from io import StringIO as Str
 
 def getCsv(file, filters={}):
+	"""Given a specific CSV file (string) and a set of filters (dictionary
+	   key-values pairs), will return a CSV-formatted table of the matching data
+	   entries from that file (including a header row).
+	"""
 	all = []
 	with open(file) as f:
 		reader = csv.DictReader(f)
@@ -29,6 +34,12 @@ def getCsv(file, filters={}):
 		raise Exception('No matching data entries found')
 
 def getExcel(file, filters={}):
+	"""Given a specific Excel file (string) and a set of filters (dictionary
+	   key-values pairs), will return a CSV-formatted table of the matching data
+	   entries from that file (including a header row). Defaults to the first
+	   sheet in the workbook; other sheets can be specified by name or
+	   zero-based index using the '_sheet' parameter in the URL's query segment.
+	"""
 	wb = xlrd.open_workbook(file)
 	if '_sheet' not in filters:
 		warnings.warn('No worksheet specified (_sheet filter expected); defaulting to first worksheet')
@@ -59,6 +70,11 @@ def getExcel(file, filters={}):
 		raise Exception('No matching data entries found')
 		
 def getSqlite(file, filters={}):
+	"""Given a specific SQLite file (string) and a set of filters (dictionary
+	   key-values pairs), will return a CSV-formatted table of the matching data
+	   entries from that file (including a header row). Requres a '_table'
+	   parameter in filters to query from the appropriate table.
+	"""
 	if '_table' not in filters:
 		raise Exception('No table specified (_table filter expected)')
 	table = filters.pop('_table')
@@ -89,6 +105,9 @@ def getSqlite(file, filters={}):
 		raise Exception('No matching data entries found')
 		
 def formatCsv(dicts):
+	"""Converts a list of dictionaries into a CSV-formatted flat table
+	   (including a header row).
+	"""
 	dicts = basic.align(dicts)
 	output = Str()
 	writer = csv.DictWriter(output, dicts[0].keys())

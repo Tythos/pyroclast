@@ -1,0 +1,54 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module pyroclast.server</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="pyroclast.html"><font color="#ffffff">pyroclast</font></a>.server</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:///C:/users/brian/projects/pyroclast/server.py">c:\users\brian\projects\pyroclast\server.py</a></font></td></tr></table>
+    <p><tt>Defines&nbsp;the&nbsp;primary&nbsp;entry&nbsp;point&nbsp;for&nbsp;starting&nbsp;a&nbsp;Pyroclast&nbsp;REST-ful&nbsp;server<br>
+based&nbsp;on&nbsp;CherryPy's&nbsp;WSGI&nbsp;webserver&nbsp;implementation.&nbsp;File&nbsp;extensions&nbsp;determine<br>
+how&nbsp;requests&nbsp;are&nbsp;routed&nbsp;to&nbsp;different&nbsp;parsers,&nbsp;defined&nbsp;in&nbsp;either&nbsp;the<br>
+dataTables&nbsp;module&nbsp;or&nbsp;the&nbsp;objectHierarchies&nbsp;module&nbsp;(depending&nbsp;on&nbsp;the&nbsp;format).</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="pyroclast.basic.html">pyroclast.basic</a><br>
+<a href="cherrypy.html">cherrypy</a><br>
+</td><td width="25%" valign=top><a href="pyroclast.dataTables.html">pyroclast.dataTables</a><br>
+<a href="pyroclast.objectHierarchies.html">pyroclast.objectHierarchies</a><br>
+</td><td width="25%" valign=top><a href="ntpath.html">ntpath</a><br>
+<a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-application"><strong>application</strong></a>(env, start_response)</dt><dd><tt>Defines&nbsp;the&nbsp;WSGI-based&nbsp;server&nbsp;application&nbsp;that&nbsp;routes&nbsp;queries&nbsp;to&nbsp;the<br>
+appropriate&nbsp;parser&nbsp;based&nbsp;on&nbsp;file&nbsp;extension.</tt></dd></dl>
+ <dl><dt><a name="-null"><strong>null</strong></a>(file, filters)</dt></dl>
+ <dl><dt><a name="-parseQueryValues"><strong>parseQueryValues</strong></a>(query)</dt><dd><tt>Returns&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;query&nbsp;dictionary&nbsp;for&nbsp;which&nbsp;values&nbsp;in&nbsp;key-value<br>
+pairs&nbsp;have&nbsp;been&nbsp;parsed&nbsp;from&nbsp;string&nbsp;representations&nbsp;into&nbsp;primitives.</tt></dd></dl>
+ <dl><dt><a name="-start"><strong>start</strong></a>(host<font color="#909090">='127.0.0.1'</font>, port<font color="#909090">=1337</font>)</dt><dd><tt>Initializes&nbsp;a&nbsp;pyroclast&nbsp;server&nbsp;using&nbsp;CherryPy's&nbsp;WSGI&nbsp;webserver.&nbsp;Defaults<br>
+to&nbsp;hosting&nbsp;on&nbsp;127.0.0.1&nbsp;at&nbsp;port&nbsp;1337,&nbsp;which&nbsp;can&nbsp;be&nbsp;changed&nbsp;using&nbsp;this<br>
+function's&nbsp;parameters.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>mimeTypes</strong> = {'.csv': 'text/plain', '.json': 'text/plain', '.sql': 'text/plain', '.unq': 'text/plain', '.xls': 'text/plain', '.xlsx': 'text/plain', '.xml': 'text/plain'}<br>
+<strong>parsers</strong> = {'.csv': &lt;function getCsv&gt;, '.ico': &lt;function null&gt;, '.json': &lt;function getJson&gt;, '.sql': &lt;function getSqlite&gt;, '.unq': &lt;function getUnqlite&gt;, '.xls': &lt;function getExcel&gt;, '.xlsx': &lt;function getExcel&gt;, '.xml': &lt;function getXml&gt;}</td></tr></table>
+</body></html>

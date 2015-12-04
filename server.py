@@ -39,11 +39,17 @@ parsers = {
 }
 
 def parseQueryValues(query):
+	"""Returns a copy of the query dictionary for which values in key-value
+	   pairs have been parsed from string representations into primitives.
+	"""
 	for q in query:
 		query[q] = basic.parseStrValue(query[q][0])
 	return query
 	
 def application(env, start_response):
+	"""Defines the WSGI-based server application that routes queries to the
+	   appropriate parser based on file extension.
+	"""
 	f, x = path.splitext(env['PATH_INFO'])
 	q = parse_qs(env['QUERY_STRING'])
 	filters = parseQueryValues(q)
@@ -57,16 +63,20 @@ def application(env, start_response):
 	else:
 		raise Exception('Unable to determine parser for extension %s' % x)
 		
-def startServer():
+def start(host='127.0.0.1', port=1337):
+	"""Initializes a pyroclast server using CherryPy's WSGI webserver. Defaults
+	   to hosting on 127.0.0.1 at port 1337, which can be changed using this
+	   function's parameters.
+	"""
 	cherrypy.tree.graft(application, '/')
 	cherrypy.server.unsubscribe()
 	server = cherrypy._cpserver.Server()
-	server.socket_host = '127.0.0.1'
-	server.socket_port = 1337
+	server.socket_host = host
+	server.socket_port = port
 	server.threat_pool = 30
 	server.subscribe()
 	cherrypy.engine.start()
 	cherrypy.engine.block()
 	
 if __name__ == '__main__':
-	startServer()
+	start()

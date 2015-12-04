@@ -1,0 +1,51 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module pyroclast.dataTables</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="pyroclast.html"><font color="#ffffff">pyroclast</font></a>.dataTables</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:///C:/users/brian/projects/pyroclast/datatables.py">c:\users\brian\projects\pyroclast\datatables.py</a></font></td></tr></table>
+    <p><tt>Handlers&nbsp;for&nbsp;data&nbsp;formats&nbsp;structured&nbsp;around&nbsp;a&nbsp;flat&nbsp;data&nbsp;table,&nbsp;as&nbsp;opposed&nbsp;to<br>
+an&nbsp;object&nbsp;hierarchy,&nbsp;such&nbsp;as&nbsp;CSV&nbsp;and&nbsp;Excel</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="pyroclast.basic.html">pyroclast.basic</a><br>
+<a href="csv.html">csv</a><br>
+</td><td width="25%" valign=top><a href="io.html">io</a><br>
+<a href="sqlite3.html">sqlite3</a><br>
+</td><td width="25%" valign=top><a href="sys.html">sys</a><br>
+<a href="warnings.html">warnings</a><br>
+</td><td width="25%" valign=top><a href="xlrd.html">xlrd</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-formatCsv"><strong>formatCsv</strong></a>(dicts)</dt><dd><tt>Converts&nbsp;a&nbsp;list&nbsp;of&nbsp;dictionaries&nbsp;into&nbsp;a&nbsp;CSV-formatted&nbsp;flat&nbsp;table<br>
+(including&nbsp;a&nbsp;header&nbsp;row).</tt></dd></dl>
+ <dl><dt><a name="-getCsv"><strong>getCsv</strong></a>(file, filters<font color="#909090">={}</font>)</dt><dd><tt>Given&nbsp;a&nbsp;specific&nbsp;CSV&nbsp;file&nbsp;(string)&nbsp;and&nbsp;a&nbsp;set&nbsp;of&nbsp;filters&nbsp;(dictionary<br>
+key-values&nbsp;pairs),&nbsp;will&nbsp;return&nbsp;a&nbsp;CSV-formatted&nbsp;table&nbsp;of&nbsp;the&nbsp;matching&nbsp;data<br>
+entries&nbsp;from&nbsp;that&nbsp;file&nbsp;(including&nbsp;a&nbsp;header&nbsp;row).</tt></dd></dl>
+ <dl><dt><a name="-getExcel"><strong>getExcel</strong></a>(file, filters<font color="#909090">={}</font>)</dt><dd><tt>Given&nbsp;a&nbsp;specific&nbsp;Excel&nbsp;file&nbsp;(string)&nbsp;and&nbsp;a&nbsp;set&nbsp;of&nbsp;filters&nbsp;(dictionary<br>
+key-values&nbsp;pairs),&nbsp;will&nbsp;return&nbsp;a&nbsp;CSV-formatted&nbsp;table&nbsp;of&nbsp;the&nbsp;matching&nbsp;data<br>
+entries&nbsp;from&nbsp;that&nbsp;file&nbsp;(including&nbsp;a&nbsp;header&nbsp;row).&nbsp;Defaults&nbsp;to&nbsp;the&nbsp;first<br>
+sheet&nbsp;in&nbsp;the&nbsp;workbook;&nbsp;other&nbsp;sheets&nbsp;can&nbsp;be&nbsp;specified&nbsp;by&nbsp;name&nbsp;or<br>
+zero-based&nbsp;index&nbsp;using&nbsp;the&nbsp;'_sheet'&nbsp;parameter&nbsp;in&nbsp;the&nbsp;URL's&nbsp;query&nbsp;segment.</tt></dd></dl>
+ <dl><dt><a name="-getSqlite"><strong>getSqlite</strong></a>(file, filters<font color="#909090">={}</font>)</dt><dd><tt>Given&nbsp;a&nbsp;specific&nbsp;SQLite&nbsp;file&nbsp;(string)&nbsp;and&nbsp;a&nbsp;set&nbsp;of&nbsp;filters&nbsp;(dictionary<br>
+key-values&nbsp;pairs),&nbsp;will&nbsp;return&nbsp;a&nbsp;CSV-formatted&nbsp;table&nbsp;of&nbsp;the&nbsp;matching&nbsp;data<br>
+entries&nbsp;from&nbsp;that&nbsp;file&nbsp;(including&nbsp;a&nbsp;header&nbsp;row).&nbsp;Requres&nbsp;a&nbsp;'_table'<br>
+parameter&nbsp;in&nbsp;filters&nbsp;to&nbsp;query&nbsp;from&nbsp;the&nbsp;appropriate&nbsp;table.</tt></dd></dl>
+</td></tr></table>
+</body></html>

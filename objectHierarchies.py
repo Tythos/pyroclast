@@ -1,4 +1,5 @@
-"""Handlers for data formats structured around an object hierarchy, as opposed to a flat data table, such as JSON and XML
+"""Handlers for data formats structured around an object hierarchy, as opposed
+   to a flat data table, such as JSON and XML
 """
 
 from pyroclast import basic
@@ -8,6 +9,10 @@ from unqlite import UnQLite as unq
 import re
 
 def getJson(file, filters={}):
+	"""Given a specific JSON file (string) and a set of filters (dictionary
+	   key-values pairs), will return a JSON-formatted tree of the matching data
+	   entries from that file (starting as a null-key list of objects).
+	"""
 	with open(file, 'r') as f:
 		j = json.loads(f.read())
 	all = j['']
@@ -18,6 +23,10 @@ def getJson(file, filters={}):
 		raise Exception('No matching data entries found')
 	
 def getXml(file, filters={}):
+	"""Given a specific XML file (string) and a set of filters (dictionary
+	   key-values pairs), will return a JSON-formatted tree of the matching data
+	   entries from that file (starting as a null-key list of objects).
+	"""
 	root = xet.parse(file).getroot()
 	all = [parseElement(el) for el in root]
 	dicts = basic.filter(all, filters)
@@ -27,6 +36,13 @@ def getXml(file, filters={}):
 		raise Exception('No matching data entries found')
 		
 def getUnqlite(file, filters={}):
+	"""Given a specific UnQLite file (string) and a set of filters (dictionary
+	   key-values pairs), will return a JSON-formatted tree of the matching data
+	   entries from that file (starting as a null-key list of objects).
+	   Key-value pairs can be selected using the '_key' parameter, while
+	   specific collections can be selected using the '_collection' parameter.
+	   If neither parameter is used, all contents of the database are returned.
+	"""
 	db = unq(file)
 	if '_collection' in filters:
 		c = filters.pop('_collection')
@@ -80,4 +96,7 @@ def parseElement(el):
 	return d
 	
 def formatJson(dicts, key=""):
+	"""Converts a list of dictionaries into a JSON-formatted object hierarchy
+	   that begins with a blank-keyed list of objects.
+	"""
 	return json.dumps({key:dicts})

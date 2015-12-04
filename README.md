@@ -14,7 +14,7 @@ To start a Pyroclast instance, simply point the Python interpreter to the server
 
 Alternatively, you can import server and start an instance manually from within Python:
 >>> from pyroclast import server
->>> server.startServer()
+>>> server.start()
 
 Once the server is started, you will see a blank HTTP response for 127.0.0.1:1337. This means it's working!
 
