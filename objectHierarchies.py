@@ -4,6 +4,8 @@
 from pyroclast import basic
 import json
 from xml.etree import ElementTree as xet
+from unqlite import UnQLite as unq
+import re
 
 def getJson(file, filters={}):
 	with open(file, 'r') as f:
@@ -24,6 +26,35 @@ def getXml(file, filters={}):
 	else:
 		raise Exception('No matching data entries found')
 		
+def getUnqlite(file, filters={}):
+	db = unq(file)
+	if '_collection' in filters:
+		c = filters.pop('_collection')
+		coll = db.collection(c)
+		all = coll.all()
+	elif '_key' in filters:
+		key = filters.pop('_key')
+		all = [{key: db[key]}]
+	else:
+		all = [{'_root':{}}]
+		for key,value in db:
+			c = db.collection(key)
+			if c.exists():
+				all.append({key: c.all()})
+			else:
+				isKey = True
+				if re.search('_\d+$', key):
+					c = db.collection(re.sub('_\d+$', '', key))
+					isKey = not c.exists()
+				if isKey:
+					all.append({key:value})
+					all[0]['_root'][key] = value
+	dicts = basic.filter(all, filters)
+	if len(dicts) > 0:
+		return formatJson(dicts)
+	else:
+		raise Exception('No matching data entries found')
+			
 def parseElement(el):
 	"""Recursively converts an XML element to a dictionary object. After the
 	   initial pass, children are checked for single-value elements that are

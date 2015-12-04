@@ -21,6 +21,19 @@ class XmlTests(unittest.TestCase):
 	def test_filter(self):
 		file = data.get_path('test.xml')
 		content = objectHierarchies.getXml(file, {'isPrime': True})
+		
+class UnqliteTests(unittest.TestCase):
+	def test_get(self):
+		file = data.get_path('test.unq')
+		content = objectHierarchies.getUnqlite(file)
+
+	def test_key(self):
+		file = data.get_path('test.unq')
+		content = objectHierarchies.getUnqlite(file, {'_key':'myKey'})
+
+	def test_collection(self):
+		file = data.get_path('test.unq')
+		content = objectHierarchies.getUnqlite(file, {'_collection':'entries', 'isPrime':True})
 
 if __name__ == "__main__":
 	unittest.main()

@@ -1,4 +1,6 @@
-"""Basic data handling mechanisms for lists of dictionaries
+"""Basic data handling mechanisms for lists of dictionaries, including alignment
+   (i.e., given all dictionaries in a list uniform keysets), filtering, and
+   string value parsing.
 """
 
 def filter(dicts, filters):

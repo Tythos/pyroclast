@@ -1,3 +1,9 @@
+"""Defines the primary entry point for starting a Pyroclast REST-ful server
+   based on CherryPy's WSGI webserver implementation. File extensions determine
+   how requests are routed to different parsers, defined in either the
+   dataTables module or the objectHierarchies module (depending on the format).
+"""
+
 import cherrypy
 from os import path
 import sys
@@ -17,7 +23,8 @@ mimeTypes = {
 	'.xlsx': 'text/plain',
 	'.sql': 'text/plain',
 	'.json': 'text/plain',
-	'.xml': 'text/plain'
+	'.xml': 'text/plain',
+	'.unq': 'text/plain'
 }
 
 parsers = {
@@ -27,6 +34,7 @@ parsers = {
 	'.sql': dataTables.getSqlite,
 	'.json': objectHierarchies.getJson,
 	'.xml': objectHierarchies.getXml,
+	'.unq': objectHierarchies.getUnqlite,
 	'.ico': null
 }
 
@@ -48,16 +56,17 @@ def application(env, start_response):
 		return [parsers[x](file, filters)]
 	else:
 		raise Exception('Unable to determine parser for extension %s' % x)
-	
-if __name__ == '__main__':
+		
+def startServer():
 	cherrypy.tree.graft(application, '/')
 	cherrypy.server.unsubscribe()
-
 	server = cherrypy._cpserver.Server()
 	server.socket_host = '127.0.0.1'
 	server.socket_port = 1337
 	server.threat_pool = 30
 	server.subscribe()
-	
 	cherrypy.engine.start()
 	cherrypy.engine.block()
+	
+if __name__ == '__main__':
+	startServer()
